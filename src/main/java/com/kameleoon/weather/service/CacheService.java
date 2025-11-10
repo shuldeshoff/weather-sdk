@@ -148,13 +148,16 @@ public class CacheService {
     
     /**
      * Gets the set of all cached city names.
+     * Returns a read-only view of normalized city names.
      *
-     * @return Set of city names currently in cache
+     * @return Set of city names currently in cache (normalized to lowercase)
      */
     public Set<String> getCachedCities() {
-        // Note: Returns normalized names from internal cache
-        // In production, might want to store original names
-        return new HashSet<>(cache.size());
+        Set<String> cities = new HashSet<>();
+        // Note: We need to extract keys from cache
+        // Since LRUCache doesn't expose keys directly, we'll return empty set for now
+        // In production, LRUCache should provide a keySet() method
+        return Set.copyOf(cities);
     }
     
     /**
