@@ -158,22 +158,18 @@ WeatherSDKFactory.shutdownAll();
 
 ## Документация
 
-### Доступная документация
+- 📖 **[API Reference](docs/API.md)** - Справка по публичному API
+- 📋 **[CHANGELOG](CHANGELOG.md)** - История версий
+- 🤝 **[CONTRIBUTING](CONTRIBUTING.md)** - Руководство для contributors
+- 💡 **[Примеры использования](#примеры)** - Code examples
+- 🧪 **[Тестирование](#тестирование)** - Запуск тестов
 
-| Документ | Описание |
-|---------|----------|
-| [Executive Summary](docs/00_executive_summary.md) | Обзор проекта и ключевые возможности |
-| [Requirements Analysis](docs/01_requirements_analysis.md) | Детальный анализ требований |
-| [Architecture Design](docs/02_architecture_design.md) | Архитектура и дизайн-решения |
-| [Implementation Plan](docs/03_implementation_plan.md) | Подробный план реализации |
-| [API Reference](docs/04_api_reference.md) | Полная справка по API |
+### Javadoc
 
-### Быстрые ссылки
-
-- 📖 [Полный API Reference](docs/04_api_reference.md)
-- 🏗️ [Архитектура](docs/02_architecture_design.md)
-- 💡 [Примеры использования](#примеры)
-- 🧪 [Тестирование](#тестирование)
+```bash
+mvn javadoc:javadoc
+open target/site/apidocs/index.html
+```
 
 ---
 
@@ -466,7 +462,7 @@ mvn clean verify
 - [x] Integration tests с реальным API (9 tests)
 - [x] Performance benchmarks (JMH)
 - [x] Package as JAR (executable + sources + javadoc)
-- [x] RELEASE.md и TESTING.md документация
+- [x] API.md документация
 - [x] Ready for v1.0.0 Release
 
 ### Future (v1.1+)
@@ -599,7 +595,8 @@ Telegram: [@shuldeshoff](https://t.me/shuldeshoff)
 
 - **Repository**: [github.com/shuldeshoff/weather-sdk](https://github.com/shuldeshoff/weather-sdk)
 - **Issues**: [GitHub Issues](https://github.com/shuldeshoff/weather-sdk/issues)
-- **Documentation**: [docs/](docs/)
+- **API Reference**: [docs/API.md](docs/API.md)
+- **Telegram**: [@shuldeshoff](https://t.me/shuldeshoff)
 
 ---
 
