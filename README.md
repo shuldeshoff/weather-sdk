@@ -1,10 +1,13 @@
 # Weather SDK для OpenWeatherMap API
 
-[![Java](https://img.shields.io/badge/Java-11%2B-orange.svg)](https://www.oracle.com/java/)
-[![License](https://img.shields.io/badge/License-Proprietary-blue.svg)](LICENSE)
+[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
+[![Maven](https://img.shields.io/badge/Maven-3.6%2B-blue.svg)](https://maven.apache.org/)
 [![Status](https://img.shields.io/badge/Status-Design%20Phase-yellow.svg)]()
 
-Профессиональный Java SDK для простой и эффективной интеграции с OpenWeatherMap API.
+Профессиональный Java SDK для интеграции с OpenWeatherMap API.
+
+**Автор:** Шульдешов Юрий Леонидович  
+**Контакт:** [@shuldeshoff](https://t.me/shuldeshoff)
 
 ---
 
@@ -136,7 +139,7 @@ public class QuickStart {
 }
 ```
 
-### Готово! 🎉
+Теперь SDK готов к использованию.
 
 ---
 
@@ -505,7 +508,10 @@ Proprietary © 2025 Kameleoon
 
 ---
 
-## Авторы
+## Автор
+
+**Шульдешов Юрий Леонидович**  
+Telegram: [@shuldeshoff](https://t.me/shuldeshoff)
 
 Разработано для Kameleoon в рамках тестового задания.
 
@@ -513,17 +519,13 @@ Proprietary © 2025 Kameleoon
 
 ## Контакты
 
-- **Issues**: [GitHub Issues](https://github.com/kameleoon/weather-sdk/issues)
+- **Repository**: [github.com/shuldeshoff/weather-sdk](https://github.com/shuldeshoff/weather-sdk)
+- **Issues**: [GitHub Issues](https://github.com/shuldeshoff/weather-sdk/issues)
 - **Documentation**: [docs/](docs/)
-- **Examples**: [examples/](examples/)
 
 ---
 
-**Статус проекта**: 🟡 Design Phase Complete  
-**Следующий этап**: Implementation  
-**Ожидаемый релиз**: 3-4 недели
-
----
-
-Сделано с ❤️ для Kameleoon
+**Статус проекта**: Фаза проектирования завершена  
+**Следующий этап**: Реализация  
+**Оценка времени**: 3-4 недели
 
