@@ -132,10 +132,11 @@ Client Apps → Public API → Services → Integration → External API
 ## 💻 Технологии
 
 ### Core Stack
-- Java 11+
+- Java 17 (LTS)
 - Gson 2.10.1
 - SLF4J 2.0.9
 - Java HttpClient (built-in)
+- Maven 3.6+
 
 ### Testing Stack
 - JUnit 5.10.0

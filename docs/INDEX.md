@@ -343,7 +343,7 @@
 
 - **OpenWeatherMap API:** https://openweathermap.org/api
 - **OpenWeatherMap Docs:** https://openweathermap.org/current
-- **Java 11 Docs:** https://docs.oracle.com/en/java/javase/11/
+- **Java 17 Docs:** https://docs.oracle.com/en/java/javase/17/
 - **Maven Guide:** https://maven.apache.org/guides/
 
 ### Глоссарий

@@ -284,7 +284,7 @@ public class OpenWeatherMapClient {
 ```
 
 **Особенности:**
-- Использует Java 11+ HttpClient
+- Использует Java HttpClient (встроенный с Java 11)
 - Retry механизм для transient errors
 - Таймауты на запросы
 
@@ -601,8 +601,8 @@ PollingService  CacheService  WeatherService  APIClient
 
 | Библиотека | Версия | Назначение |
 |-----------|--------|-----------|
-| Java JDK | 11+ | Основная платформа |
-| Gson/Jackson | 2.10.1 | JSON сериализация |
+| Java JDK | 17 (LTS) | Основная платформа |
+| Gson | 2.10.1 | JSON сериализация |
 | SLF4J | 2.0.9 | Logging facade |
 | Logback | 1.4.11 | Logging implementation |
 

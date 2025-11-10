@@ -971,9 +971,10 @@ public class OpenWeatherMapClient {
     <url>https://github.com/kameleoon/weather-sdk</url>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
         
         <gson.version>2.10.1</gson.version>
         <slf4j.version>2.0.9</slf4j.version>
@@ -1055,8 +1056,7 @@ public class OpenWeatherMapClient {
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <release>17</release>
                 </configuration>
             </plugin>
 

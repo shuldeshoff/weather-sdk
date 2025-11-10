@@ -77,8 +77,8 @@ Weather SDK - это полнофункциональный SDK, разрабо�
 
 ### Требования
 
-- Java 11 или выше
-- Maven 3.6+ или Gradle 6+
+- Java 17 (LTS) или выше
+- Maven 3.6+ или Gradle 7+
 - OpenWeatherMap API ключ ([получить здесь](https://openweathermap.org/api))
 
 ### Установка
@@ -344,10 +344,10 @@ mvn clean verify
 
 ### Core
 
-- **Java**: 11+
+- **Java**: 17 (LTS)
 - **Gson**: 2.10.1 (JSON)
 - **SLF4J**: 2.0.9 (Logging)
-- **HttpClient**: Java built-in
+- **HttpClient**: Java built-in (java.net.http)
 
 ### Testing
 

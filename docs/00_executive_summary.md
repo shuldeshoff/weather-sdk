@@ -141,10 +141,11 @@ Weather SDK - это профессиональный Java SDK для интег
 
 | Технология | Версия | Назначение |
 |-----------|--------|-----------|
-| **Java JDK** | 11+ | Основная платформа |
+| **Java JDK** | 17 (LTS) | Основная платформа |
 | **Gson** | 2.10.1 | JSON сериализация |
 | **SLF4J** | 2.0.9 | Logging API |
 | **Java HttpClient** | Built-in | HTTP запросы |
+| **Maven** | 3.6+ | Build tool |
 
 ### Тестирование
 
@@ -513,8 +514,10 @@ info.getMaxSize();         // int
 
 ## 🎓 Технические решения
 
-### Почему Java?
+### Почему Java 17?
 
+✅ **LTS версия** - Long-Term Support до 2029  
+✅ **Modern Records** - cleaner data models  
 ✅ **Зрелая экосистема** - богатые библиотеки и инструменты  
 ✅ **Enterprise-ready** - проверено в production  
 ✅ **Type safety** - меньше runtime ошибок  
@@ -527,6 +530,13 @@ info.getMaxSize();         // int
 ✅ **Modern** - async support, HTTP/2  
 ✅ **Well-maintained** - часть JDK  
 ✅ **Production-ready** - используется везде
+
+### Почему Maven?
+
+✅ **Industry standard** - стандарт для Java проектов  
+✅ **Зрелый** - проверенный временем  
+✅ **Огромная экосистема** - плагины для всего  
+✅ **Central Repository** - легкий доступ к библиотекам
 
 ### Почему Gson?
 
