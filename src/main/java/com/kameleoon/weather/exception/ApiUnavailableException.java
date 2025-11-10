@@ -26,5 +26,16 @@ public class ApiUnavailableException extends ApiException {
     public ApiUnavailableException(String message, Throwable cause) {
         super(message, cause);
     }
+    
+    /**
+     * Constructs a new ApiUnavailableException with status code and API response.
+     *
+     * @param message The detail message
+     * @param statusCode The HTTP status code
+     * @param apiResponse The API error response body
+     */
+    public ApiUnavailableException(String message, int statusCode, String apiResponse) {
+        super(message + " (HTTP " + statusCode + ") - API response: " + apiResponse);
+    }
 }
 

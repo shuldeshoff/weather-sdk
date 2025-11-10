@@ -16,5 +16,15 @@ public class RateLimitException extends ApiException {
     public RateLimitException(String message) {
         super(message);
     }
+    
+    /**
+     * Constructs a new RateLimitException with the specified detail message and API response.
+     *
+     * @param message The detail message
+     * @param apiResponse The API error response body
+     */
+    public RateLimitException(String message, String apiResponse) {
+        super(message + " - API response: " + apiResponse);
+    }
 }
 

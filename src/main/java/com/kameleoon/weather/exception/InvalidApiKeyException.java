@@ -16,5 +16,15 @@ public class InvalidApiKeyException extends ApiException {
     public InvalidApiKeyException(String message) {
         super(message);
     }
+    
+    /**
+     * Constructs a new InvalidApiKeyException with the specified detail message and API response.
+     *
+     * @param message The detail message
+     * @param apiResponse The API error response body
+     */
+    public InvalidApiKeyException(String message, String apiResponse) {
+        super(message + " - API response: " + apiResponse);
+    }
 }
 
