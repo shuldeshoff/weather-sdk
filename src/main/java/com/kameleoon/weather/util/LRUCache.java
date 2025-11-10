@@ -113,5 +113,14 @@ public class LRUCache<K, V> {
     public int getMaxSize() {
         return maxSize;
     }
+    
+    /**
+     * Gets a copy of all keys currently in the cache.
+     *
+     * @return Set of all keys
+     */
+    public synchronized java.util.Set<K> keySet() {
+        return new java.util.HashSet<>(cache.keySet());
+    }
 }
 
