@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Service for caching weather data.
@@ -23,8 +24,8 @@ public class CacheService {
     
     private final LRUCache<String, CacheEntry> cache;
     private final long ttlMillis;
-    private long cacheHits = 0;
-    private long cacheMisses = 0;
+    private final AtomicLong cacheHits = new AtomicLong(0);
+    private final AtomicLong cacheMisses = new AtomicLong(0);
     
     /**
      * Creates a new CacheService with specified capacity and TTL.
@@ -62,19 +63,19 @@ public class CacheService {
         CacheEntry entry = cache.get(normalizedCity);
         
         if (entry == null) {
-            cacheMisses++;
+            cacheMisses.incrementAndGet();
             logger.debug("Cache miss for city: {}", cityName);
             return Optional.empty();
         }
         
         if (entry.isExpired(ttlMillis)) {
             cache.remove(normalizedCity);
-            cacheMisses++;
+            cacheMisses.incrementAndGet();
             logger.debug("Cache entry expired for city: {}", cityName);
             return Optional.empty();
         }
         
-        cacheHits++;
+        cacheHits.incrementAndGet();
         logger.debug("Cache hit for city: {} (age: {}ms)", cityName, entry.getAge());
         return Optional.of(entry.data());
     }
@@ -141,8 +142,8 @@ public class CacheService {
      */
     public void clear() {
         cache.clear();
-        cacheHits = 0;
-        cacheMisses = 0;
+        cacheHits.set(0);
+        cacheMisses.set(0);
         logger.info("Cache cleared");
     }
     
@@ -180,8 +181,8 @@ public class CacheService {
      * @return Hit rate as a value between 0.0 and 1.0
      */
     public double getCacheHitRate() {
-        long total = cacheHits + cacheMisses;
-        return total == 0 ? 0.0 : (double) cacheHits / total;
+        long total = cacheHits.get() + cacheMisses.get();
+        return total == 0 ? 0.0 : (double) cacheHits.get() / total;
     }
     
     /**
@@ -190,7 +191,7 @@ public class CacheService {
      * @return Number of cache hits
      */
     public long getCacheHits() {
-        return cacheHits;
+        return cacheHits.get();
     }
     
     /**
@@ -199,7 +200,7 @@ public class CacheService {
      * @return Number of cache misses
      */
     public long getCacheMisses() {
-        return cacheMisses;
+        return cacheMisses.get();
     }
     
     /**

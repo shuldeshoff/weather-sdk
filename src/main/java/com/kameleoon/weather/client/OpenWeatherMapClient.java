@@ -7,6 +7,7 @@ import com.kameleoon.weather.model.api.OpenWeatherMapResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -22,7 +23,7 @@ import java.time.Duration;
  *
  * @author Yury Shuldeshov
  */
-public class OpenWeatherMapClient {
+public class OpenWeatherMapClient implements Closeable {
     
     private static final Logger logger = LoggerFactory.getLogger(OpenWeatherMapClient.class);
     
@@ -272,6 +273,16 @@ public class OpenWeatherMapClient {
             Thread.currentThread().interrupt();
             logger.warn("Sleep interrupted");
         }
+    }
+    
+    /**
+     * Closes the HTTP client and releases resources.
+     * Note: Java 11+ HttpClient manages its executor service automatically,
+     * so this method is provided for interface compliance and logging.
+     */
+    @Override
+    public void close() {
+        logger.debug("OpenWeatherMapClient closed");
     }
 }
 

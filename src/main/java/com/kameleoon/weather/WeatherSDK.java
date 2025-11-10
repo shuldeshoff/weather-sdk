@@ -48,6 +48,7 @@ public class WeatherSDK {
     private static final Logger logger = LoggerFactory.getLogger(WeatherSDK.class);
     
     private final SDKConfig config;
+    private final OpenWeatherMapClient apiClient;
     private final WeatherService weatherService;
     private final CacheService cacheService;
     private final LocationRegistry locationRegistry;
@@ -71,7 +72,7 @@ public class WeatherSDK {
         logger.info("Initializing Weather SDK in {} mode", config.operationMode());
         
         // Initialize components
-        OpenWeatherMapClient apiClient = new OpenWeatherMapClient(
+        this.apiClient = new OpenWeatherMapClient(
             config.apiKey(),
             config.maxRetries()
         );
@@ -235,6 +236,11 @@ public class WeatherSDK {
         
         if (isPollingMode && pollingService != null) {
             pollingService.stop();
+        }
+        
+        // Close HTTP client to release resources
+        if (apiClient != null) {
+            apiClient.close();
         }
         
         logger.info("Weather SDK shutdown complete");
